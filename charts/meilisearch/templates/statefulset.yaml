@@ -91,6 +91,7 @@ spec:
             httpGet:
               path: /health
               port: http
+              scheme: HTTPS
             periodSeconds: {{ .Values.startupProbe.periodSeconds }}
             initialDelaySeconds: {{ .Values.startupProbe.InitialDelaySeconds }}
             failureThreshold: {{ .Values.startupProbe.failureThreshold }}
@@ -98,12 +99,14 @@ spec:
             httpGet:
               path: /health
               port: http
+              scheme: HTTPS
             periodSeconds: {{ .Values.livenessProbe.periodSeconds }}
             initialDelaySeconds: {{ .Values.livenessProbe.InitialDelaySeconds }}
           readinessProbe:
             httpGet:
               path: /health
               port: http
+              scheme: HTTPS
             periodSeconds: {{ .Values.readinessProbe.periodSeconds }}
             initialDelaySeconds: {{ .Values.readinessProbe.InitialDelaySeconds }}
           resources:
